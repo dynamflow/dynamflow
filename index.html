@@ -463,74 +463,96 @@ With Dynamflow, innovation flows naturally  keeping you ahead of the curve and a
 
  <!-- Testimonials -->
 <div class="js__parallax-window" style="background: url(img/1920x1080/04.jpg) 50% 0 no-repeat fixed;">
-    <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-125--sm">
-        <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--white-opacity g-letter-spacing--2 g-margin-b-50--xs">Testimonials</p>
+  <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-125--sm">
+    <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--white-opacity g-letter-spacing--2 g-margin-b-50--xs">Testimonials</p>
 
-        <div class="s-portfolio">
-            <div id="js__testimonial-gallery" class="cbp">
+    <!-- Swiper -->
+    <div class="s-swiper js__swiper-testimonials">
+      <div class="swiper-wrapper">
 
-                <!-- Testimonial Video 1 -->
-                <div class="s-portfolio__item cbp-item">
-                    <div class="s-portfolio__img-effect">
-                        <img src="img/970x647/testimonial1.jpg" alt="Testimonial 1">
-                    </div>
-                    <div class="s-portfolio__caption-hover--cc">
-                        <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Jake Richardson / Google</h4>
-                        <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" 
-                                   class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
-                                   data-title="Jake Richardson / Google">
-                                   <i class="ti-control-play"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Testimonial Video 2 -->
-                <div class="s-portfolio__item cbp-item">
-                    <div class="s-portfolio__img-effect">
-                        <img src="img/970x647/testimonial2.jpg" alt="Testimonial 2">
-                    </div>
-                    <div class="s-portfolio__caption-hover--cc">
-                        <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Jane Doe / Microsoft</h4>
-                        <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" 
-                                   class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
-                                   data-title="Jane Doe / Microsoft">
-                                   <i class="ti-control-play"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Testimonial Video 3 -->
-                <div class="s-portfolio__item cbp-item">
-                    <div class="s-portfolio__img-effect">
-                        <img src="img/970x647/testimonial3.jpg" alt="Testimonial 3">
-                    </div>
-                    <div class="s-portfolio__caption-hover--cc">
-                        <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">John Smith / Apple</h4>
-                        <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
-                            <li>
-                                <a href="https://www.youtube.com/watch?v=VIDEO_ID_3" 
-                                   class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
-                                   data-title="John Smith / Apple">
-                                   <i class="ti-control-play"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="s-portfolio__img-effect">
+            <a href="https://www.youtube.com/watch?v=oCiXRxSM0lg" class="cbp-lightbox" data-title="Jake Richardson / Google">
+              <img src="https://img.youtube.com/vi/oCiXRxSM0lg/0.jpg" alt="Dynaflow Testimonial 1">
+              <i class="ti-control-play overlay-icon"></i>
+            </a>
+          </div>
         </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="s-portfolio__img-effect">
+            <a href="https://www.youtube.com/watch?v=dEOn4rVxPq0" class="cbp-lightbox" data-title="Jane Doe / Microsoft">
+              <img src="https://img.youtube.com/vi/dEOn4rVxPq0/0.jpg" alt="Dynaflow Testimonial 2">
+              <i class="ti-control-play overlay-icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="s-portfolio__img-effect">
+            <a href="https://www.youtube.com/watch?v=fiFxlIOn3cY" class="cbp-lightbox" data-title="John Smith / Apple">
+              <img src="https://img.youtube.com/vi/fiFxlIOn3cY/0.jpg" alt="Dynaflow Testimonial 3">
+              <i class="ti-control-play overlay-icon"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Swiper Navigation -->
+      <a href="javascript:void(0);" class="s-swiper__arrow-v1--right ti-angle-right js__swiper-btn--next"></a>
+      <a href="javascript:void(0);" class="s-swiper__arrow-v1--left ti-angle-left js__swiper-btn--prev"></a>
     </div>
+  </div>
 </div>
-<!-- End Testimonials -->
+
+<!-- Swiper CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  var testimonialSwiper = new Swiper('.js__swiper-testimonials', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.js__swiper-btn--next',
+      prevEl: '.js__swiper-btn--prev',
+    },
+    breakpoints: {
+      1200: { slidesPerView: 3 },
+      992: { slidesPerView: 2 },
+      768: { slidesPerView: 1 },
+    },
+  });
+</script>
+
+<style>
+  .s-portfolio__img-effect {
+    position: relative;
+    cursor: pointer;
+  }
+  .s-portfolio__img-effect img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .overlay-icon {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+</style>
 
 <!-- Cube Portfolio CSS & JS (if not added yet) -->
 <link rel="stylesheet" href="path/to/cubeportfolio/css/cubeportfolio.min.css">
