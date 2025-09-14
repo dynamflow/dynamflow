@@ -311,17 +311,21 @@ With Dynamflow, innovation flows naturally  keeping you ahead of the curve and a
         </div>
         <!-- End Subscribe -->
 
-     <!-- Portfolio Filter -->
+     <!-- Portfolio Section -->
 <div class="container g-padding-y-80--xs">
     <div class="g-text-center--xs g-margin-b-40--xs">
-        <h2 class="g-font-size-32--xs g-font-size-36--md">Projects</h2>
+        <h2 class="g-font-size-32--xs g-font-size-36--md">Our Work</h2>
+        <p>Explore Dynamflow verticals that help you stand out and stay connected.</p>
     </div>
+
+    <!-- Portfolio Filter -->
     <div class="s-portfolio">
         <div id="js__filters-portfolio-gallery" class="s-portfolio__filter-v1 cbp-l-filters-text cbp-l-filters-center">
             <div data-filter="*" class="s-portfolio__filter-v1-item cbp-filter-item cbp-filter-item-active">Show All</div>
-            <div data-filter=".graphic" class="s-portfolio__filter-v1-item cbp-filter-item">Graphic</div>
-            <div data-filter=".logos" class="s-portfolio__filter-v1-item cbp-filter-item">Logo</div>
-            <div data-filter=".motion" class="s-portfolio__filter-v1-item cbp-filter-item">Motion</div>
+            <div data-filter=".animation" class="s-portfolio__filter-v1-item cbp-filter-item">Dynamflow Animation Studio</div>
+            <div data-filter=".models" class="s-portfolio__filter-v1-item cbp-filter-item">Dynamflow 3D Model Marketplace</div>
+            <div data-filter=".store" class="s-portfolio__filter-v1-item cbp-filter-item">Dynamflow Store</div>
+            <div data-filter=".tech" class="s-portfolio__filter-v1-item cbp-filter-item">Dynamflow Tech</div>
         </div>
     </div>
 </div>
@@ -329,62 +333,104 @@ With Dynamflow, innovation flows naturally  keeping you ahead of the curve and a
 
 <!-- Portfolio Gallery -->
 <div class="container g-margin-b-100--xs">
-    <div id="js__grid-portfolio-gallery" class="cbp">
+    <div id="js__grid-portfolio-gallery" class="row">
 
-        <!-- Dynamflow Video 1 -->
-        <div class="s-portfolio__item cbp-item motion">
-            <div class="s-portfolio__img-effect">
-                <!-- Thumbnail (replace with your own screenshot if needed) -->
-                <img src="img/970x647/05.jpg" alt="Mojo Energy Drink Animation">
-            </div>
-            <div class="s-portfolio__caption-hover--cc">
-                <div class="g-margin-b-25--xs">
-                    <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">
-                        Mojo Energy Drink Animation
-                    </h4>
-                    <p class="g-color--white-opacity">by Dynamflow</p>
+        <!-- Example Project: Mojo Energy Drink -->
+        <div class="col-md-4 cbp-item animation">
+            <div class="s-portfolio__item">
+                <div class="s-portfolio__img-effect">
+                    <img src="img/970x647/05.jpg" alt="Mojo Energy Drink Animation">
                 </div>
-                <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
-                    <li>
-                        <a href="https://www.youtube.com/watch?v=-kl-QMve2L0"
-                           class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
-                           data-title="Mojo Energy Drink Animation <br/> by Dynamflow">
-                           <i class="ti-control-play"></i>
-                        </a>
-                    </li>
-                </ul>
+                <div class="s-portfolio__caption-hover--cc">
+                    <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Mojo Energy Drink Animation</h4>
+                    <p class="g-color--white-opacity">by Dynamflow Animation Studio</p>
+                    <a href="#videoModal" data-toggle="modal" class="s-icon s-icon--sm s-icon--white-bg g-radius--circle">
+                        <i class="ti-control-play"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- Duplicate this block for more videos -->
-        <!-- Example Video 2 -->
-        <div class="s-portfolio__item cbp-item graphic">
-            <div class="s-portfolio__img-effect">
-                <img src="img/970x647/06.jpg" alt="Another Project">
-            </div>
-            <div class="s-portfolio__caption-hover--cc">
-                <div class="g-margin-b-25--xs">
-                    <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">
-                        Another Dynamflow Project
-                    </h4>
-                    <p class="g-color--white-opacity">by Dynamflow</p>
+        <!-- Placeholder for 3D Model Marketplace -->
+        <div class="col-md-4 cbp-item models">
+            <div class="s-portfolio__item">
+                <div class="s-portfolio__img-effect">
+                    <img src="img/970x647/06.jpg" alt="3D Model Showcase">
                 </div>
-                <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
-                    <li>
-                        <a href="https://www.youtube.com/watch?v=VIDEO_ID_HERE"
-                           class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
-                           data-title="Another Project <br/> by Dynamflow">
-                           <i class="ti-control-play"></i>
-                        </a>
-                    </li>
-                </ul>
+                <div class="s-portfolio__caption-hover--cc">
+                    <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">3D Model Showcase</h4>
+                    <p class="g-color--white-opacity">by Dynamflow 3D Model Marketplace</p>
+                    <a href="#videoModal" data-toggle="modal" class="s-icon s-icon--sm s-icon--white-bg g-radius--circle">
+                        <i class="ti-control-play"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder for Dynamflow Store -->
+        <div class="col-md-4 cbp-item store">
+            <div class="s-portfolio__item">
+                <div class="s-portfolio__img-effect">
+                    <img src="img/970x647/07.jpg" alt="Store Product Demo">
+                </div>
+                <div class="s-portfolio__caption-hover--cc">
+                    <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Store Product Demo</h4>
+                    <p class="g-color--white-opacity">by Dynamflow Store</p>
+                    <a href="#videoModal" data-toggle="modal" class="s-icon s-icon--sm s-icon--white-bg g-radius--circle">
+                        <i class="ti-control-play"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder for Dynamflow Tech -->
+        <div class="col-md-4 cbp-item tech">
+            <div class="s-portfolio__item">
+                <div class="s-portfolio__img-effect">
+                    <img src="img/970x647/08.jpg" alt="Tech Showcase">
+                </div>
+                <div class="s-portfolio__caption-hover--cc">
+                    <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">Tech Showcase</h4>
+                    <p class="g-color--white-opacity">by Dynamflow Tech</p>
+                    <a href="#videoModal" data-toggle="modal" class="s-icon s-icon--sm s-icon--white-bg g-radius--circle">
+                        <i class="ti-control-play"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
     </div>
-    <!-- End Portfolio Gallery -->
 </div>
-<!-- End Portfolio -->
+<!-- End Portfolio Gallery -->
+
+<!-- Modal with Scrollable Videos -->
+<div id="videoModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" style="max-height:90vh; overflow-y:auto;">
+      <div class="modal-header">
+        <h4 class="modal-title">Dynamflow Projects</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Mojo Energy Drink Animation -->
+        <div class="embed-responsive embed-responsive-16by9 g-margin-b-30--xs">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-kl-QMve2L0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Add more Dynamflow YouTube videos here -->
+        <div class="embed-responsive embed-responsive-16by9 g-margin-b-30--xs">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+        </div>
+
+        <div class="embed-responsive embed-responsive-16by9 g-margin-b-30--xs">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
         <!-- Testimonials -->
         <div class="js__parallax-window" style="background: url(img/1920x1080/04.jpg) 50% 0 no-repeat fixed;">
