@@ -111,91 +111,34 @@
         
         <!--========== END HEADER
 
- ==========-->
-<!--========== HERO SECTION WITH BACKGROUND VIDEO ==========-->
-<section class="hero-section">
-  <!-- Background Video -->
-  <video class="background-video" autoplay muted loop playsinline>
-    <source src="include/media/mp4_video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+ ==========--><!--========== SWIPER SLIDER WITH VIDEO BACKGROUND ==========-->
 
-  <!-- Dark Overlay -->
-  <div class="overlay"></div>
+<div class="s-swiper js__swiper-one-item">  
+    <!-- Swiper Wrapper -->  
+    <div class="swiper-wrapper">  <!-- Slide 1 -->  
+    <div class="g-fullheight--xs g-bg-position--center ">  
+        <!-- Background Video -->  
+        <video autoplay loop>  
+            <source src="include/media/mp4_video.mp4" type="video/mp4">  
+            
+            Your browser does not support the video tag.  
+        </video>  
 
-  <!-- Content -->
-  <div class="hero-content">
-    <h1>Welcome to <span style="color:#ff6600;">Dynamflow</span></h1>
-    <p>Where Technology Meets Lifestyle</p>
-    <a href="#about" class="btn">Explore More</a>
-  </div>
-</section>
+        
+        </div>  
+    </div>  
 
-<!--========== CSS STYLES ==========-->
-<style>
-/* Section setup */
-.hero-section {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
-}
+</div>  
+<!-- End Swiper Wrapper -->
 
-/* Background video styling */
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-/* Overlay for contrast */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: -1;
-}
-
-/* Text styles */
-.hero-content h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-/* Button style */
-.btn {
-  background: #ff6600;
-  color: #fff;
-  padding: 12px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #e65500;
-}
-</style>
+</div>  
+         <a href="#js__scroll-to-section" class="s-scroll-to-section-v1--bc g-margin-b-15--xs">  
+            <span class="g-font-size-18--xs g-color--white ti-angle-double-down"></span>  
+            <p class="text-uppercase g-color--white g-letter-spacing--3 g-margin-b-0--xs">Learn More</p>  
+        </a>  
+    </div>  
+    <!--========== END SWIPER SLIDER ==========-->
+                    
 <!--========== PAGE CONTENT: SERVICES ==========-->
 <div id="js__scroll-to-section" class="container g-padding-y-80--xs g-padding-y-125--sm">
     <div class="g-text-center--xs g-margin-b-100--xs">
