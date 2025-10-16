@@ -112,66 +112,80 @@
         
         <!--========== END HEADER
 
- ==========--><!--========== HERO SECTION WITH FIXED VIDEO BACKGROUND ==========-->
-<section class="hero-video-section">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="include/media/mp4_video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+ <!--========== HERO SECTION WITH 3D INTERACTION & VIDEO BACKGROUND ==========-->
+<section class="hero-3d">
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="include/media/mp4_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-  <!-- Overlay for dark tint (optional) -->
-  <div class="video-overlay"></div>
+  <!-- Overlay -->
+  <div class="overlay"></div>
 
-  <!-- Hero Content -->
+  <!-- Content -->
   <div class="hero-content">
-    <h1 class="hero-title">Welcome to Dynamflow</h1>
-    <p class="hero-subtitle">Innovation • Style • Performance</p>
-    <a href="#js__scroll-to-section" class="hero-btn">Learn More</a>
+    <h1 class="hero-title">Welcome to <span class="brand">Dynamflow</span></h1>
+    <p class="hero-subtitle">Technology • Design • Innovation</p>
+    <a href="#about" class="hero-btn">Explore More</a>
   </div>
 </section>
-<!--========== END HERO SECTION ==========-->
 
-<!--========== CSS STYLES ==========-->
+<!--========== STYLES ==========-->
 <style>
-.hero-video-section {
+/* 3D HERO SECTION */
+.hero-3d {
   position: relative;
-  height: 100vh;
+  height: 600px;
+  perspective: 1000px; /* enables 3D effect */
   overflow: hidden;
 }
 
-.hero-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.video-overlay {
+/* Background Video */
+.video-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* adjust for brightness */
-  z-index: 0;
+  overflow: hidden;
+  transform: translateZ(-50px) scale(1.1); /* subtle depth */
 }
 
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay for contrast */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* Hero content */
 .hero-content {
   position: relative;
-  z-index: 1;
-  color: white;
+  z-index: 2;
+  color: #fff;
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0 20px;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
 }
 
 .hero-title {
   font-size: 3rem;
   font-weight: bold;
+  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
@@ -180,6 +194,11 @@
   margin-bottom: 2rem;
 }
 
+.brand {
+  color: #ff6600;
+}
+
+/* Button */
 .hero-btn {
   background: #ff6600;
   color: #fff;
@@ -187,13 +206,33 @@
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .hero-btn:hover {
   background: #e65500;
 }
 </style>
+
+<!--========== SCRIPT FOR 3D INTERACTION ==========-->
+<script>
+  // 3D interaction effect
+  const hero = document.querySelector('.hero-3d');
+  const content = document.querySelector('.hero-content');
+
+  hero.addEventListener('mousemove', e => {
+    const { offsetWidth: width, offsetHeight: height } = hero;
+    let x = e.offsetX / width - 0.5;
+    let y = e.offsetY / height - 0.5;
+    const rotateX = y * 10; // tilt up/down
+    const rotateY = x * 10; // tilt left/right
+    content.style.transform = `translateY(-50%) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    content.style.transform = 'translateY(-50%) rotateX(0deg) rotateY(0deg)';
+  });
+        </script>
                     
 <!--========== PAGE CONTENT: SERVICES ==========-->
 <div id="js__scroll-to-section" class="container g-padding-y-80--xs g-padding-y-125--sm">
