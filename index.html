@@ -112,86 +112,87 @@
         <!--========== END HEADER
 
  ==========-->
-
-<!--========== HERO SECTION WITH FIXED VIDEO BACKGROUND ==========-->
-<section class="hero-video-section">
-  <video class="hero-video" autoplay muted loop playsinline>
+<!--========== HERO SECTION WITH BACKGROUND VIDEO ==========-->
+<section class="hero-section">
+  <!-- Background Video -->
+  <video class="background-video" autoplay muted loop playsinline>
     <source src="include/media/mp4_video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Overlay for dark tint (optional) -->
-  <div class="video-overlay"></div>
+  <!-- Dark Overlay -->
+  <div class="overlay"></div>
 
-  <!-- Hero Content -->
+  <!-- Content -->
   <div class="hero-content">
-    <h1 class="hero-title">Welcome to Dynamflow</h1>
-    <p class="hero-subtitle">Innovation • Style • Performance</p>
-    <a href="#js__scroll-to-section" class="hero-btn">Learn More</a>
+    <h1>Welcome to <span style="color:#ff6600;">Dynamflow</span></h1>
+    <p>Where Technology Meets Lifestyle</p>
+    <a href="#about" class="btn">Explore More</a>
   </div>
 </section>
-<!--========== END HERO SECTION ==========-->
 
 <!--========== CSS STYLES ==========-->
 <style>
-.hero-video-section {
+/* Section setup */
+.hero-section {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
 }
 
-.hero-video {
+/* Background video styling */
+.background-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
 }
 
-.video-overlay {
+/* Overlay for contrast */
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* adjust for brightness */
-  z-index: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 0 20px;
-}
-
-.hero-title {
+/* Text styles */
+.hero-content h1 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.hero-subtitle {
+.hero-content p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
-.hero-btn {
+/* Button style */
+.btn {
   background: #ff6600;
   color: #fff;
   padding: 12px 30px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
-.hero-btn:hover {
+.btn:hover {
   background: #e65500;
 }
 </style>
