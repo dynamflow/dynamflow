@@ -67,6 +67,7 @@
                     </div>
                 </div>
             </div>
+        </header>
             <!-- End Navbar -->
 
             <!-- Overlay -->
@@ -111,33 +112,88 @@
         
         <!--========== END HEADER
 
- ==========--><!--========== SWIPER SLIDER WITH VIDEO BACKGROUND ==========-->
+ ==========--><!--========== HERO SECTION WITH FIXED VIDEO BACKGROUND ==========-->
+<section class="hero-video-section">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="include/media/mp4_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-<div class="s-swiper js__swiper-one-item">  
-    <!-- Swiper Wrapper -->  
-    <div class="swiper-wrapper">  <!-- Slide 1 -->  
-    <div class="g-fullheight--xs g-bg-position--center ">  
-        <!-- Background Video -->  
-        <video autoplay loop>  
-            <source src="include/media/mp4_video.mp4" type="video/mp4">  
-            
-            Your browser does not support the video tag.  
-        </video>  
+  <!-- Overlay for dark tint (optional) -->
+  <div class="video-overlay"></div>
 
-        
-        </div>  
-    </div>  
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1 class="hero-title">Welcome to Dynamflow</h1>
+    <p class="hero-subtitle">Innovation • Style • Performance</p>
+    <a href="#js__scroll-to-section" class="hero-btn">Learn More</a>
+  </div>
+</section>
+<!--========== END HERO SECTION ==========-->
 
-</div>  
-<!-- End Swiper Wrapper -->
+<!--========== CSS STYLES ==========-->
+<style>
+.hero-video-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 
-</div>  
-         <a href="#js__scroll-to-section" class="s-scroll-to-section-v1--bc g-margin-b-15--xs">  
-            <span class="g-font-size-18--xs g-color--white ti-angle-double-down"></span>  
-            <p class="text-uppercase g-color--white g-letter-spacing--3 g-margin-b-0--xs">Learn More</p>  
-        </a>  
-    </div>  
-    <!--========== END SWIPER SLIDER ==========-->
+.hero-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* adjust for brightness */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background: #ff6600;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background: #e65500;
+}
+</style>
                     
 <!--========== PAGE CONTENT: SERVICES ==========-->
 <div id="js__scroll-to-section" class="container g-padding-y-80--xs g-padding-y-125--sm">
