@@ -871,17 +871,28 @@ With Dynamflow, innovation flows naturally  keeping you ahead of the curve and a
         </div>
         <!-- End Counter -->
 
-<!--========== DYNAMFLOW CONTACT FORM SECTION ==========-->
+         <!--========== DYNAMFLOW CONTACT FORM SECTION ==========-->
 <section id="dynamflow-contact" class="container g-padding-y-80--xs g-padding-y-125--sm">
   <div class="g-text-center--xs g-margin-b-80--xs">
-    <h2 class="text-uppercase g-font-size-32--xs g-font-weight--700">Contact <span class="g-color--primary">Dynamflow</span></h2>
-    <p class="g-font-size-16--xs">Get in touch with <strong>Dynamflow Studios</strong> or <strong>Dynamflow Online Store</strong> — we’re here to help!</p>
+    <h2 class="text-uppercase g-font-size-32--xs g-font-weight--700">
+      Contact <span class="g-color--primary">Dynamflow</span>
+    </h2>
+    <p class="g-font-size-16--xs">
+      Get in touch with <strong>Dynamflow Studios</strong> or <strong>Dynamflow Online Store</strong> — we’re here to help!
+    </p>
   </div>
 
   <div class="row g-row-col--5">
     <div class="col-md-8 col-md-offset-2">
-      <form id="contact-form" class="s-form-v2 g-bg-color--white g-box-shadow--dark-lightest-v3 g-radius--10 g-padding-x-40--xs g-padding-y-50--xs" onsubmit="return validateForm()">
+
+      <!-- Web3Forms Integration -->
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="s-form-v2 g-bg-color--white g-box-shadow--dark-lightest-v3 g-radius--10 g-padding-x-40--xs g-padding-y-50--xs" onsubmit="return validateForm()">
         
+        <!-- Web3Forms API Access Key -->
+        <input type="hidden" name="access_key" value="2c75b616-5cc8-43dd-8fac-5bfe3d9d2c46">
+        <input type="hidden" name="subject" value="New Message from Dynamflow Contact Form">
+        <input type="hidden" name="from_name" value="Dynamflow Website">
+
         <!-- Choose Branch -->
         <div class="g-margin-b-20--xs">
           <select id="branch" name="branch" class="form-control s-form-v2__input g-radius--50" required onchange="toggleFormSections()">
@@ -1002,14 +1013,12 @@ With Dynamflow, innovation flows naturally  keeping you ahead of the curve and a
       alert("Please confirm you are not a robot.");
       return false;
     }
-    alert("Thank you for contacting Dynamflow!");
+    alert("✅ Thank you for contacting Dynamflow! Your message has been sent successfully.");
     return true;
   }
 
-  // Keep your existing price update script below here
-</script>
-       
-        <!--========== END PAGE CONTENT ==========-->
+  // Include your existing price update script below
+</script>   
 
         <!--========== FOOTER ==========-->
         <footer class="g-bg-color--dark">
