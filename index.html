@@ -217,23 +217,144 @@
 <!--========== SCRIPT FOR 3D INTERACTION ==========-->
 <script>
   // 3D interaction effect
-  const hero = document.querySelector('.hero-3d');
-  const content = document.querySelector('.hero-content');
+  c<!--========== HERO SECTION WITH 3D INTERACTION & VIDEO BACKGROUND ==========-->
+<section class="hero-3d">
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="include/media/mp4_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-  hero.addEventListener('mousemove', e => {
-    const { offsetWidth: width, offsetHeight: height } = hero;
-    let x = e.offsetX / width - 0.5;
-    let y = e.offsetY / height - 0.5;
-    const rotateX = y * 10; // tilt up/down
-    const rotateY = x * 10; // tilt left/right
-    content.style.transform = `translateY(-50%) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  });
+  <!-- Overlay -->
+  <div class="overlay"></div>
 
-  hero.addEventListener('mouseleave', () => {
-    content.style.transform = 'translateY(-50%) rotateX(0deg) rotateY(0deg)';
-  });
+  <!-- Content -->
+  <div class="hero-content">
+    <h1 class="hero-title">Welcome to <span class="brand">Dynamflow</span></h1>
+    <p class="hero-subtitle">Technology • Design • Innovation</p>
+    <a href="#about" class="hero-btn">Explore More</a>
+  </div>
+</section>
+
+<!--========== STYLES ==========-->
+<style>
+.hero-3d {
+  position: relative;
+  height: 600px;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(-50px) scale(1.1);
+  transition: transform 0.3s ease-out;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.brand {
+  color: #ff6600;
+}
+
+.hero-btn {
+  background: #ff6600;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #e65500;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+</style>
+
+<!--========== SCRIPT FOR SMOOTH 3D INTERACTION ==========-->
+<script>
+const hero = document.querySelector('.hero-3d');
+const content = document.querySelector('.hero-content');
+const videoBg = document.querySelector('.video-bg');
+
+let rotateX = 0, rotateY = 0;
+let targetX = 0, targetY = 0;
+
+hero.addEventListener('mousemove', e => {
+  const { offsetWidth: width, offsetHeight: height } = hero;
+  let x = (e.offsetX / width - 0.5) * 2; // -1 to 1
+  let y = (e.offsetY / height - 0.5) * 2;
+  targetX = y * 10; // tilt up/down
+  targetY = x * 10; // tilt left/right
+});
+
+hero.addEventListener('mouseleave', () => {
+  targetX = 0;
+  targetY = 0;
+});
+
+function animate() {
+  rotateX += (targetX - rotateX) * 0.1;
+  rotateY += (targetY - rotateY) * 0.1;
+  content.style.transform = `translateY(-50%) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  videoBg.style.transform = `translateZ(-50px) scale(1.1) rotateY(${rotateY/10}deg) rotateX(${rotateX/10}deg)`;
+  requestAnimationFrame(animate);
+}
+
+animate();
 </script>
-        
 
 <!--========== DYNAMFLOW STUDIOS AUTO SLIDER WITH SCROLL ANIMATION ==========-->
 <section id="dynamflow-studios" class="container g-padding-y-80--xs g-padding-y-125--sm">
