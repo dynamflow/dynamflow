@@ -871,172 +871,143 @@ With Dynamflow, innovation flows naturally  keeping you ahead of the curve and a
         </div>
         <!-- End Counter -->
 
-        <!--Feedback Form with Advanced Pricing Logic -->
-<div class="g-bg-color--sky-light">
-    <div class="container g-padding-y-80--xs g-padding-y-125--sm">
-      <div class="g-text-center--xs g-margin-b-80--xs">
-        <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Feedback</p>
-        <h2 class="g-font-size-32--xs g-font-size-36--md">Send us a note</h2>
-      </div>
-  
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="2c75b616-5cc8-43dd-8fac-5bfe3d9d2c46">
-        <input type="hidden" name="from_name" value="Dynamflow website">
-        <input type="hidden" name="subject" value="New Home-massage>
-           
-  
+<!--========== DYNAMFLOW CONTACT FORM SECTION ==========-->
+<section id="dynamflow-contact" class="container g-padding-y-80--xs g-padding-y-125--sm">
+  <div class="g-text-center--xs g-margin-b-80--xs">
+    <h2 class="text-uppercase g-font-size-32--xs g-font-weight--700">Contact <span class="g-color--primary">Dynamflow</span></h2>
+    <p class="g-font-size-16--xs">Get in touch with <strong>Dynamflow Studios</strong> or <strong>Dynamflow Online Store</strong> — we’re here to help!</p>
+  </div>
+
+  <div class="row g-row-col--5">
+    <div class="col-md-8 col-md-offset-2">
+      <form id="contact-form" class="s-form-v2 g-bg-color--white g-box-shadow--dark-lightest-v3 g-radius--10 g-padding-x-40--xs g-padding-y-50--xs" onsubmit="return validateForm()">
         
-        <div class="row g-margin-b-40--xs">
-          <div class="col-sm-6 g-margin-b-20--xs g-margin-b-0--md">
-  
-            <input type="text" name="name" class="form-control s-form-v2__input g-radius--50" placeholder="* Name" required>
-            <input type="email" name="email" class="form-control s-form-v2__input g-radius--50" placeholder="* Email" required>
-            <input type="text" name="phone" class="form-control s-form-v2__input g-radius--50" placeholder="* Phone">
-            <input type="text" name="company" class="form-control s-form-v2__input g-radius--50" placeholder="* Company Name" required>
-  
-            <!-- Service Dropdown -->
-            <select name="service" id="service" class="form-control s-form-v2__input g-radius--50" required onchange="updatePrice()">
-              <option value="">* Select a Service</option>
-              <option value="2D & 3D Animation Production">2D & 3D Animation Production</option>
-              <option value="Graphic Design">Graphic Design</option>
-              <option value="2D & 3D House Plan Visualization">2D & 3D House Plan Visualization</option>
-              <option value="Digital Marketing">Digital Marketing</option>
-              <option value="Website Design">Website Design</option>
-              <option value="3D Modeling">3D Modeling</option>
-            </select>
-  
-            <!-- Plan Dropdown -->
-            <select name="plan" id="plan" class="form-control s-form-v2__input g-radius--50" required onchange="updatePrice()">
-              <option value="">* Select Plan</option>
-              <option value="Basic">Basic</option>
-              <option value="Standard">Standard</option>
-              <option value="Premium">Premium</option>
-            </select>
-  
-            <!-- Currency Dropdown -->
-            <select name="currency" id="currency" class="form-control s-form-v2__input g-radius--50" required onchange="updatePrice()">
-              <option value="">* Select Currency</option>
-              <option value="USD">USD ($)</option>
-              <option value="ZMW">ZMW (K)</option>
-              <option value="EUR">EUR (€)</option>
-              <option value="GBP">GBP (£)</option>
-              <option value="KES">KES (KSh)</option>
-              <option value="NGN">NGN (₦)</option>
-              <option value="INR">INR (₹)</option>
-              <option value="CAD">CAD ($)</option>
-              <option value="AUD">AUD ($)</option>
-              <option value="JPY">JPY (¥)</option>
-              <option value="CNY">CNY (¥)</option>
-              <option value="BRL">BRL (R$)</option>
-              <option value="MXN">MXN ($)</option>
-              <option value="CHF">CHF (Fr)</option>
-              <option value="RUB">RUB (₽)</option>
-              <option value="ZAR">ZAR (R)</option>
-              <option value="SEK">SEK (kr)</option>
-              <option value="NOK">NOK (kr)</option>
-              <option value="DKK">DKK (kr)</option>
-              <option value="SGD">SGD ($)</option>
-              <option value="HKD">HKD ($)</option>
-              <option value="PLN">PLN (zł)</option>
-              <option value="THB">THB (฿)</option>
-              <option value="MYR">MYR (RM)</option>
-              <option value="IDR">IDR (Rp)</option>
-              <option value="PHP">PHP (₱)</option>
-              <option value="VND">VND (₫)</option>
-              <option value="EGP">EGP (£)</option>
-              <option value="SAR">SAR (﷼)</option>
-              <option value="AED">AED (د.إ)</option>
-              <option value="TRY">TRY (₺)</option>
-              <option value="TWD">TWD (NT$)</option>
-              <option value="CZK">CZK (Kč)</option>
-              <option value="HUF">HUF (Ft)</option>
-              <option value="ILS">ILS (₪)</option>
-              <option value="PKR">PKR (₨)</option>
-              <option value="BDT">BDT (৳)</option>
-              <option value="LKR">LKR (Rs)</option>
-              <option value="MAD">MAD (د.م.)</option>
-            </select>
-  
-            <!-- Dynamic Price Display -->
-            <div class="g-margin-b-20--xs">
-              <input type="text" id="price" name="price" readonly class="form-control s-form-v2__input g-radius--50" placeholder="Price will appear here">
-            </div>
-  
-          </div>
-  
-          <!-- Message -->
+        <!-- Choose Branch -->
+        <div class="g-margin-b-20--xs">
+          <select id="branch" name="branch" class="form-control s-form-v2__input g-radius--50" required onchange="toggleFormSections()">
+            <option value="">-- Select Branch --</option>
+            <option value="studio">Dynamflow Studios</option>
+            <option value="store">Dynamflow Online Store</option>
+          </select>
+        </div>
+
+        <!-- User Info -->
+        <div class="row g-margin-b-20--xs">
           <div class="col-sm-6">
-            <textarea name="message" class="form-control s-form-v2__input g-radius--10 g-padding-y-20--xs" rows="8" placeholder="* Your message" required></textarea>
+            <input type="text" name="name" class="form-control s-form-v2__input g-radius--50" placeholder="* Your Name" required>
+          </div>
+          <div class="col-sm-6">
+            <input type="email" name="email" class="form-control s-form-v2__input g-radius--50" placeholder="* Your Email" required>
           </div>
         </div>
-  
-        <!-- Quotation Request Checkbox -->
-        <div class="text-center">
-          <label><input type="checkbox" name="request_quote" value="yes"> Send me a printable quotation via email</label>
+
+        <div class="g-margin-b-20--xs">
+          <input type="tel" name="phone" class="form-control s-form-v2__input g-radius--50" placeholder="* Your Phone Number" required>
         </div>
-  
-        <!-- Robot Check -->
-        <div class="text-center g-margin-y-20--xs">
+
+        <!-- DYNAMFLOW STUDIOS SERVICES -->
+        <div id="studio-section" style="display:none;">
+          <h4 class="g-margin-b-10--xs g-color--primary">Studios Services</h4>
+          <div class="row g-margin-b-20--xs">
+            <div class="col-sm-6">
+              <select id="service" name="service" class="form-control s-form-v2__input g-radius--50" onchange="updatePrice()">
+                <option value="">Select a Service</option>
+                <option>2D & 3D Animation Production</option>
+                <option>Graphic Design</option>
+                <option>2D & 3D House Plan Visualization</option>
+                <option>Digital Marketing</option>
+                <option>Website Design</option>
+                <option>3D Modeling</option>
+              </select>
+            </div>
+
+            <div class="col-sm-3">
+              <select id="plan" name="plan" class="form-control s-form-v2__input g-radius--50" onchange="updatePrice()">
+                <option value="">Plan</option>
+                <option>Basic</option>
+                <option>Standard</option>
+                <option>Premium</option>
+              </select>
+            </div>
+
+            <div class="col-sm-3">
+              <select id="currency" name="currency" class="form-control s-form-v2__input g-radius--50" onchange="updatePrice()">
+                <option value="USD">USD ($)</option>
+                <option value="ZMW">ZMW (K)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="KES">KES (KSh)</option>
+                <option value="NGN">NGN (₦)</option>
+                <option value="INR">INR (₹)</option>
+                <option value="PKR">PKR (₨)</option>
+                <option value="BDT">BDT (৳)</option>
+                <option value="LKR">LKR (Rs)</option>
+                <option value="MAD">MAD (د.م.)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Price Output -->
+          <div class="g-margin-b-20--xs">
+            <input type="text" id="price" name="price" readonly class="form-control s-form-v2__input g-radius--50" placeholder="Price will appear here">
+          </div>
+        </div>
+
+        <!-- DYNAMFLOW STORE PRODUCTS -->
+        <div id="store-section" style="display:none;">
+          <h4 class="g-margin-b-10--xs g-color--primary">Online Store</h4>
+          <div class="g-margin-b-20--xs">
+            <select name="product_interest" class="form-control s-form-v2__input g-radius--50">
+              <option value="">Select Product Type</option>
+              <option>Headphones & Earbuds</option>
+              <option>Fast Chargers & Cables</option>
+              <option>Smart Watches</option>
+              <option>Speakers</option>
+              <option>Electronics Accessories</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="g-margin-b-20--xs">
+          <textarea name="message" class="form-control s-form-v2__input g-radius--10 g-padding-y-20--xs" rows="6" placeholder="* Your Message" required></textarea>
+        </div>
+
+        <!-- Checkbox Options -->
+        <div class="text-center">
+          <label><input type="checkbox" name="request_quote" value="yes"> Send me a printable quotation via email</label><br>
           <label><input type="checkbox" name="not_robot" required> I'm not a robot</label>
         </div>
-  
-        <div class="g-text-center--xs">
+
+        <!-- Submit Button -->
+        <div class="g-text-center--xs g-margin-t-30--xs">
           <button type="submit" class="text-uppercase s-btn s-btn--md s-btn--primary-bg g-radius--50 g-padding-x-80--xs">Submit</button>
         </div>
       </form>
     </div>
   </div>
-  
-  <script>
-    const prices = {
-      "2D & 3D Animation Production": {
-        Basic: { USD: 100, ZMW: 2200, EUR: 92, GBP: 80, KES: 13500, NGN: 85000, INR: 8200 },
-        Standard: { USD: 150, ZMW: 3300, EUR: 138, GBP: 120, KES: 20500, NGN: 125000, INR: 12400 },
-        Premium: { USD: 250, ZMW: 5500, EUR: 230, GBP: 205, KES: 35000, NGN: 205000, INR: 21000 }
-      },
-      "Graphic Design": {
-        Basic: { USD: 40, ZMW: 900, EUR: 36, GBP: 32, KES: 5400, NGN: 35000, INR: 3200 },
-        Standard: { USD: 60, ZMW: 1350, EUR: 55, GBP: 48, KES: 8000, NGN: 52000, INR: 4800 },
-        Premium: { USD: 80, ZMW: 1800, EUR: 74, GBP: 64, KES: 10800, NGN: 68000, INR: 6500 }
-      },
-      "2D & 3D House Plan Visualization": {
-        Basic: { USD: 80, ZMW: 1800, EUR: 74, GBP: 64, KES: 10800, NGN: 68000, INR: 6500 },
-        Standard: { USD: 120, ZMW: 2700, EUR: 110, GBP: 95, KES: 16200, NGN: 100000, INR: 9800 },
-        Premium: { USD: 160, ZMW: 3600, EUR: 147, GBP: 127, KES: 21600, NGN: 135000, INR: 13000 }
-      },
-      "Digital Marketing": {
-        Basic: { USD: 90, ZMW: 2000, EUR: 83, GBP: 71, KES: 12100, NGN: 77000, INR: 7500 },
-        Standard: { USD: 130, ZMW: 2900, EUR: 120, GBP: 102, KES: 17400, NGN: 110000, INR: 10500 },
-        Premium: { USD: 180, ZMW: 4000, EUR: 165, GBP: 140, KES: 24200, NGN: 150000, INR: 14600 }
-      },
-      "Website Design": {
-        Basic: { USD: 120, ZMW: 2700, EUR: 110, GBP: 95, KES: 16200, NGN: 100000, INR: 9800 },
-        Standard: { USD: 160, ZMW: 3600, EUR: 147, GBP: 127, KES: 21600, NGN: 135000, INR: 13000 },
-        Premium: { USD: 220, ZMW: 5000, EUR: 202, GBP: 175, KES: 29700, NGN: 185000, INR: 18000 }
-      },
-      "3D Modeling": {
-        Basic: { USD: 70, ZMW: 1600, EUR: 64, GBP: 55, KES: 9450, NGN: 60000, INR: 5800 },
-        Standard: { USD: 110, ZMW: 2500, EUR: 101, GBP: 87, KES: 14800, NGN: 95000, INR: 9200 },
-        Premium: { USD: 160, ZMW: 3600, EUR: 147, GBP: 127, KES: 21600, NGN: 135000, INR: 13000 }
-      }
-    };
-  
-    function updatePrice() {
-      const service = document.getElementById("service").value;
-      const plan = document.getElementById("plan").value;
-      const currency = document.getElementById("currency").value;
-      const priceInput = document.getElementById("price");
-  
-      if (service && plan && currency && prices[service] && prices[service][plan] && prices[service][plan][currency]) {
-        const price = prices[service][plan][currency];
-        const symbols = { USD: "$", ZMW: "K", EUR: "€", GBP: "£", KES: "KSh", NGN: "₦", INR: "₹" };
-        priceInput.value = `${symbols[currency] || ''}${price}`;
-      } else {
-        priceInput.value = "";
-      }
-    }
-  </script>
+</section>
 
+<!--========== JAVASCRIPT LOGIC ==========-->
+<script>
+  function toggleFormSections() {
+    const branch = document.getElementById("branch").value;
+    document.getElementById("studio-section").style.display = branch === "studio" ? "block" : "none";
+    document.getElementById("store-section").style.display = branch === "store" ? "block" : "none";
+  }
+
+  function validateForm() {
+    const notRobot = document.querySelector('input[name="not_robot"]:checked');
+    if (!notRobot) {
+      alert("Please confirm you are not a robot.");
+      return false;
+    }
+    alert("Thank you for contacting Dynamflow!");
+    return true;
+  }
+
+  // Keep your existing price update script below here
+</script>
        
         <!--========== END PAGE CONTENT ==========-->
 
