@@ -113,39 +113,144 @@
 
  ==========-->
 
+<!--========== 3D INTERACTIVE WAVES WITH VIDEO BACKGROUND ==========-->
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: 'Poppins', sans-serif;
+    }
 
-      <!--========== SWIPER SLIDER WITH VIDEO BACKGROUND ==========-->
-<div class="s-swiper js__swiper-one-item">
-    <!-- Swiper Wrapper -->
-    <div class="swiper-wrapper">
+    /* Video Background */
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
 
-        <!-- Slide 1 -->
-        <div class="g-fullheight--xs g-bg-position--center swiper-slide">
-            <!-- Background Video -->
-            <video autoplay muted loop>
-                <source src="include/media/mp4_video.mp4" type="video/mp4">
-              
-                Your browser does not support the video tag.
-            </video>
+    /* Canvas for Waves */
+    canvas#waves {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
 
-          
-            </div>
-        </div>
+    /* Overlay Content */
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      top: 45%;
+      color: #fff;
+    }
 
-    </div>
-    <!-- End Swiper Wrapper -->
-</div>
-            <!-- Arrows -->
-            <a href="javascript:void(0);" class="s-swiper__arrow-v1--right s-icon s-icon--md s-icon--white-brd g-radius--circle ti-angle-right js__swiper-btn--next"></a>
-            <a href="javascript:void(0);" class="s-swiper__arrow-v1--left s-icon s-icon--md s-icon--white-brd g-radius--circle ti-angle-left js__swiper-btn--prev"></a>
-            <!-- End Arrows -->
-            
-            <a href="#js__scroll-to-section" class="s-scroll-to-section-v1--bc g-margin-b-15--xs">
-                <span class="g-font-size-18--xs g-color--white ti-angle-double-down"></span>
-                <p class="text-uppercase g-color--white g-letter-spacing--3 g-margin-b-0--xs">Learn More</p>
-            </a>
-        </div>
-        <!--========== END SWIPER SLIDER ==========-->
+    .content h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin: 0;
+    }
+
+    .scroll-down {
+      margin-top: 20px;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+
+    .scroll-down:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="include/media/mp4_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 3D Waves -->
+  <canvas id="waves"></canvas>
+
+  <!-- Overlay Content -->
+  <div class="content">
+    <h1>Dynamflow</h1>
+    <a href="#js__scroll-to-section" class="scroll-down">
+      <span>&#x25BC; Learn More</span>
+    </a>
+  </div>
+
+  <!-- Three.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+
+  <script>
+    // === 3D Waves Animation ===
+    const canvas = document.getElementById('waves');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const geometry = new THREE.PlaneGeometry(200, 200, 100, 100);
+    const material = new THREE.MeshPhongMaterial({
+      color: 0x0099ff,
+      side: THREE.DoubleSide,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.4
+    });
+    const plane = new THREE.Mesh(geometry, material);
+    scene.add(plane);
+
+    const light = new THREE.PointLight(0xffffff, 1);
+    light.position.set(0, 50, 100);
+    scene.add(light);
+
+    camera.position.z = 60;
+    let clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      let time = clock.getElapsedTime();
+      for (let i = 0; i < plane.geometry.attributes.position.count; i++) {
+        let z = Math.sin(i / 5 + time) * 1.5;
+        plane.geometry.attributes.position.setZ(i, z);
+      }
+      plane.geometry.attributes.position.needsUpdate = true;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Mouse interaction (3D rotation)
+    document.addEventListener('mousemove', (e) => {
+      let x = (e.clientX / window.innerWidth) * 2 - 1;
+      let y = -(e.clientY / window.innerHeight) * 2 + 1;
+      plane.rotation.x = y * 0.3;
+      plane.rotation.y = x * 0.3;
+    });
+
+    // Resize Handling
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
 <!--========== PAGE CONTENT: SERVICES ==========-->
 <div id="js__scroll-to-section" class="container g-padding-y-80--xs g-padding-y-125--sm">
     <div class="g-text-center--xs g-margin-b-100--xs">
