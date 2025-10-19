@@ -323,39 +323,12 @@
 }
 </style>
 
+
+
+
+      
 <!--========== SCRIPT FOR SMOOTH 3D INTERACTION ==========-->
 <script>
-const hero = document.querySelector('.hero-3d');
-const content = document.querySelector('.hero-content');
-const videoBg = document.querySelector('.video-bg');
-
-let rotateX = 0, rotateY = 0;
-let targetX = 0, targetY = 0;
-
-hero.addEventListener('mousemove', e => {
-  const { offsetWidth: width, offsetHeight: height } = hero;
-  let x = (e.offsetX / width - 0.5) * 2; // -1 to 1
-  let y = (e.offsetY / height - 0.5) * 2;
-  targetX = y * 10; // tilt up/down
-  targetY = x * 10; // tilt left/right
-});
-
-hero.addEventListener('mouseleave', () => {
-  targetX = 0;
-  targetY = 0;
-});
-
-function animate() {
-  rotateX += (targetX - rotateX) * 0.1;
-  rotateY += (targetY - rotateY) * 0.1;
-  content.style.transform = `translateY(-50%) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  videoBg.style.transform = `translateZ(-50px) scale(1.1) rotateY(${rotateY/10}deg) rotateX(${rotateX/10}deg)`;
-  requestAnimationFrame(animate);
-}
-
-animate();
-</script>
-
 <!--========== DYNAMFLOW STUDIOS AUTO SLIDER WITH SCROLL ANIMATION ==========-->
 <section id="dynamflow-studios" class="container g-padding-y-80--xs g-padding-y-125--sm">
 
@@ -401,102 +374,7 @@ animate();
       </div>
 
       <!-- Project 2 -->
-      <div class="swiper-slide s-portfolio__item cbp-item animation" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-portfolio__img-effect">
-          <img src="img/970x647/05.jpg" alt="Mojo Energy Drink Animation">
-        </div>
-        <div class="s-portfolio__caption-hover--cc">
-          <div class="g-margin-b-25--xs">
-            <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">
-              Mojo Energy Drink Animation
-            </h4>
-            <p class="g-color--white-opacity">by DynamFlow Animation Studio</p>
-          </div>
-          <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
-            <li>
-              <a href="https://www.youtube.com/watch?v=-kl-QMve2L0"
-                 class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
-                 data-title="Mojo Energy Drink Animation <br/> by DynamFlow">
-                 <i class="ti-control-play"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-        
-        <!-- Project 3 -->
-      <div class="swiper-slide s-portfolio__item cbp-item animation" data-aos="fade-up" data-aos-delay="100">
-        <div class="s-portfolio__img-effect">
-          <img src="img/970x647/05.jpg" alt="Mojo Energy Drink Animation">
-        </div>
-        <div class="s-portfolio__caption-hover--cc">
-          <div class="g-margin-b-25--xs">
-            <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">
-              Mojo Energy Drink Animation
-            </h4>
-            <p class="g-color--white-opacity">by DynamFlow Animation Studio</p>
-          </div>
-          <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
-            <li>
-              <a href="https://www.youtube.com/watch?v=-kl-QMve2L0"
-                 class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
-                 data-title="Mojo Energy Drink Animation <br/> by DynamFlow">
-                 <i class="ti-control-play"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Add more slides in the same format -->
-
-    </div>
-<!--========== DYNAMFLOW STUDIOS AUTO SLIDER ==========-->
-<section id="dynamflow-studios" class="container g-padding-y-80--xs g-padding-y-125--sm">
-
-  <!-- Description on Top -->
-  <div class="g-text-center--xs g-margin-b-80--xs">
-    <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">
-      Welcome to DynamFlow Studios
-    </p>
-    <h2 class="g-font-size-32--xs g-font-size-36--md">
-      Bring Your Ideas to Life
-    </h2>
-    <p class="g-font-size-16--xs g-margin-b-0--xs">
-      DynamFlow Studios creates high-quality 2D & 3D animations, explainer videos, commercials, and creative storytelling.
-    </p>
-  </div>
-
-  <!-- Swiper Slider -->
-  <div class="swiper dynamflow-swiper">
-    <div class="swiper-wrapper">
-      
-      <!-- Project 1 -->
-      <div class="swiper-slide s-portfolio__item cbp-item animation">
-        <div class="s-portfolio__img-effect">
-          <img src="img/970x647/05.jpg" alt="Mojo Energy Drink Animation">
-        </div>
-        <div class="s-portfolio__caption-hover--cc">
-          <div class="g-margin-b-25--xs">
-            <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">
-              Mojo Energy Drink Animation
-            </h4>
-            <p class="g-color--white-opacity">by DynamFlow Animation Studio</p>
-          </div>
-          <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">
-            <li>
-              <a href="https://www.youtube.com/watch?v=-kl-QMve2L0"
-                 class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"
-                 data-title="Mojo Energy Drink Animation <br/> by DynamFlow">
-                 <i class="ti-control-play"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="swiper-slide s-portfolio__item cbp-item animation">
+      <div class="swiper-slide s-portfolio__item cbp-item animation" data-aos="fade-up" data-aos-delay="200">
         <div class="s-portfolio__img-effect">
           <img src="img/970x647/06.jpg" alt="Tech Promo Video">
         </div>
@@ -531,108 +409,36 @@ animate();
     </a>
   </div>
 
-  <!-- DynamFlow Store Section -->
-  <div class="g-text-center--xs g-margin-t-80--xs">
-    <h3 class="g-font-size-24--xs g-margin-b-20--xs">Visit DynamFlow Store</h3>
-    <p class="g-font-size-16--xs g-margin-b-30--xs">
-      Explore our online store for exclusive animations, templates, and creative tools to elevate your projects.
-    </p>
-    <a href="https://dynamflowstore.com" class="hero-btn" style="background:#28A745; color:#fff; padding:12px 30px; border-radius:30px; text-decoration:none; font-weight:bold;">
-      Shop Now
-    </a>
-  </div>
-
 </section>
 
 <!-- Swiper JS & Initialization -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
-<!--========== DYNAMFLOW STUDIOS AUTO SLIDER ==========-->
+  const swiper = new Swiper('.dynamflow-swiper', {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: { slidesPerView: 1 },
+      1200: { slidesPerView: 2 }
+    }
+  });
+</script>
 
-<section id="dynamflow-studios" class="container g-padding-y-80--xs g-padding-y-125--sm">    <!-- Description on Top -->    <div class="g-text-center--xs g-margin-b-80--xs">  
-    <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">  
-      Welcome to DynamFlow Studios  
-    </p>  
-    <h2 class="g-font-size-32--xs g-font-size-36--md">  
-      Bring Your Ideas to Life  
-    </h2>  
-    <p class="g-font-size-16--xs g-margin-b-0--xs">  
-      DynamFlow Studios creates high-quality 2D & 3D animations, explainer videos, commercials, and creative storytelling.  
-    </p>  
-  </div>    <!-- Swiper Slider -->    <div class="swiper dynamflow-swiper">  
-    <div class="swiper-wrapper">  <!-- Project 1 -->  
-  <div class="swiper-slide s-portfolio__item cbp-item animation">  
-    <div class="s-portfolio__img-effect">  
-      <img src="img/970x647/05.jpg" alt="Mojo Energy Drink Animation">  
-    </div>  
-    <div class="s-portfolio__caption-hover--cc">  
-      <div class="g-margin-b-25--xs">  
-        <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">  
-          Mojo Energy Drink Animation  
-        </h4>  
-        <p class="g-color--white-opacity">by DynamFlow Animation Studio</p>  
-      </div>  
-      <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">  
-        <li>  
-          <a href="https://www.youtube.com/watch?v=-kl-QMve2L0"  
-             class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"  
-             data-title="Mojo Energy Drink Animation <br/> by DynamFlow">  
-             <i class="ti-control-play"></i>  
-          </a>  
-        </li>  
-      </ul>  
-    </div>  
-  </div>  
-
-  <!-- Project 2 -->  
-  <div class="swiper-slide s-portfolio__item cbp-item animation">  
-    <div class="s-portfolio__img-effect">  
-      <img src="img/970x647/06.jpg" alt="Tech Promo Video">  
-    </div>  
-    <div class="s-portfolio__caption-hover--cc">  
-      <div class="g-margin-b-25--xs">  
-        <h4 class="g-font-size-18--xs g-color--white g-margin-b-5--xs">  
-          Tech Promo Video  
-        </h4>  
-        <p class="g-color--white-opacity">by DynamFlow Studios</p>  
-      </div>  
-      <ul class="list-inline g-ul-li-lr-5--xs g-margin-b-0--xs">  
-        <li>  
-          <a href="https://www.youtube.com/watch?v=example2"  
-             class="cbp-lightbox s-icon s-icon--sm s-icon--white-bg g-radius--circle"  
-             data-title="Tech Promo Video <br/> by DynamFlow">  
-             <i class="ti-control-play"></i>  
-          </a>  
-        </li>  
-      </ul>  
-    </div>  
-  </div>  
-
-  <!-- Add more slides in the same format -->  
-
-</div>
-
-  </div>    <!-- Get Started Button -->    <div class="g-text-center--xs g-margin-t-50--xs">  
-    <a href="get-started.html" class="hero-btn" style="background:#007BFF; color:#fff; padding:12px 30px; border-radius:30px; text-decoration:none; font-weight:bold;">  
-      Get Started  
-    </a>  
-  </div>  </section>  <!-- Swiper JS & Initialization -->  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>  
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>  
-<script>  
-  const swiper = new Swiper('.dynamflow-swiper', {  
-    slidesPerView: 2,       // Number of slides visible  
-    spaceBetween: 30,  
-    loop: true,             // Infinite loop  
-    autoplay: {  
-      delay: 3000,          // 3 seconds per slide  
-      disableOnInteraction: false,  
-    },  
-    breakpoints: {          // Responsive  
-      768: { slidesPerView: 1 },  
-      1200: { slidesPerView: 2 }  
-    }  
-  });  
+<!-- AOS Library for Scroll Animations -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    mirror: false
+  });
 </script>
         <!-- Parallax -->
         <div class="js__parallax-window" style="background: url(img/1920x1080/03.jpg) 50% 0 no-repeat fixed;">
